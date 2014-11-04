@@ -17,7 +17,7 @@ set -e
     "listen": "0.0.0.0:8888",
     "login": "admin",
     "password": "password"
-  }
+  },
   "download_limit": 0,
   "upload_limit": 0,
   "shared_folders": [
