@@ -1,14 +1,17 @@
 FROM ubuntu:14.04
 MAINTAINER Joe Ortiz
-RUN apt-get update && apt-get install -y curl
-RUN curl -o /usr/bin/btsync.tar.gz http://download-lb.utorrent.com/endpoint/btsync/os/linux-x64/track/stable
-RUN cd /usr/bin && tar -xzvf btsync.tar.gz && rm btsync.tar.gz
-RUN mkdir -p /btsync/.sync
-RUN mkdir -p /var/run/btsync
-RUN mkdir -p /data
-EXPOSE 8888
-EXPOSE 55555
-ADD start-btsync /usr/bin/start-btsync
-RUN chmod +x /usr/bin/start-btsync
+
+ENV LANG en_US.UTF-8
+RUN locale-gen $LANG
+
+ADD http://download-new.utorrent.com/endpoint/btsync/os/linux-x64/track/stable /btsync.tar.gz
+RUN tar xf /btsync.tar.gz && \
+    rm /btsync.tar.gz
+
+ADD start.sh /start.sh
+
 VOLUME ["/data"]
-# ENTRYPOINT ["start-btsync"]
+EXPOSE 3369/udp
+EXPOSE 8888
+
+CMD ["/start.sh"]
