@@ -13,5 +13,5 @@ ADD start.sh /start.sh
 VOLUME ["/data"]
 EXPOSE 3369/udp
 EXPOSE 8888
-
+ENTRYPOINT [ "/bin/bash" ]
 CMD ["/start.sh"]
