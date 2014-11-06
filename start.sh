@@ -5,7 +5,7 @@ SECRET="${@}"
 echo "Starting btsync with secret: $SECRET"
 
 set -e
-
+[ ! -L /data/.sync ] && ln -sf /data/.sync /.sync
 [ ! -f /data/btsync.conf ] && cat > /data/btsync.conf <<EOF
 {
   "listening_port": 3369,
