@@ -14,4 +14,4 @@ RUN mkdir /.sync
 VOLUME ["/data"]
 EXPOSE 3369/udp
 EXPOSE 8888
-CMD ["/start.sh"]
+ENTRYPOINT ["/start.sh"]
