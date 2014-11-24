@@ -13,5 +13,6 @@ RUN chmod 755 /start.sh
 RUN mkdir /.sync
 VOLUME ["/data"]
 EXPOSE 3369/udp
+EXPOSE 3369
 EXPOSE 8888
 ENTRYPOINT ["/start.sh"]
