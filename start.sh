@@ -13,7 +13,7 @@ set -e
   "webui": {
     "listen": "0.0.0.0:8888",
     "login": "admin",
-    "password": "password",
+    "password": "$SECRET",
   },
   "download_limit": 0,
   "upload_limit": 0,
