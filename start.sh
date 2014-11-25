@@ -31,4 +31,4 @@ set -e
 }
 EOF
 
-/btsync --nodaemon --config /data/btsync.conf
+/btsync --webui.listen 0.0.0.0:8888 --nodaemon --config /data/btsync.conf
