@@ -4,7 +4,7 @@ MAINTAINER Joe Ortiz
 ENV LANG en_US.UTF-8
 RUN locale-gen $LANG
 
-ADD http://download-new.utorrent.com/endpoint/btsync/os/linux-x64/track/stable /btsync.tar.gz
+ADD http://download.getsyncapp.com/endpoint/btsync/os/linux-x64/track/stable /btsync.tar.gz
 RUN tar xf /btsync.tar.gz && \
     rm /btsync.tar.gz
 
